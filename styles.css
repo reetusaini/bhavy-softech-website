@@ -50,16 +50,32 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
 
 p {
     margin-bottom: 1rem;
@@ -764,12 +780,12 @@ p {
     pointer-events: none;
 }
 
-.form-group input:focus + label,
-.form-group input:valid + label,
-.form-group select:focus + label,
-.form-group select:valid + label,
-.form-group textarea:focus + label,
-.form-group textarea:valid + label {
+.form-group input:focus+label,
+.form-group input:valid+label,
+.form-group select:focus+label,
+.form-group select:valid+label,
+.form-group textarea:focus+label,
+.form-group textarea:valid+label {
     top: -0.5rem;
     font-size: 0.875rem;
     color: var(--primary-blue);
@@ -905,6 +921,7 @@ p {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -916,6 +933,7 @@ p {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -927,6 +945,7 @@ p {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -934,12 +953,19 @@ p {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0) translateX(-50%);
     }
+
     40% {
         transform: translateY(-10px) translateX(-50%);
     }
+
     60% {
         transform: translateY(-5px) translateX(-50%);
     }
@@ -950,7 +976,7 @@ p {
     .container {
         padding: 0 1rem;
     }
-    
+
     .nav-menu {
         position: fixed;
         top: 100%;
@@ -965,65 +991,65 @@ p {
         opacity: 0;
         visibility: hidden;
     }
-    
+
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
     }
-    
+
     .nav-toggle {
         display: flex;
     }
-    
+
     .nav-toggle.active .bar:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .nav-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
-    
+
     .nav-toggle.active .bar:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
-    
+
     .hero-content {
         padding: 0 1rem;
     }
-    
+
     .about-grid,
     .contact-content,
     .technology-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .objectives-grid,
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .footer-links {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
-    
+
     .section-header {
         margin-bottom: 2rem;
     }
-    
+
     .offering-card,
     .objective-card,
     .feature-card {
@@ -1035,20 +1061,20 @@ p {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .hero-description {
         font-size: 1rem;
     }
-    
+
     .cta-button {
         padding: 0.875rem 1.5rem;
         font-size: 1rem;
     }
-    
+
     .contact-form-container {
         padding: 1.5rem;
     }
-    
+
     .offerings-grid {
         grid-template-columns: 1fr;
     }
@@ -1056,18 +1082,19 @@ p {
 
 /* Print Styles */
 @media print {
+
     .nav-toggle,
     .hero-scroll-indicator,
     .cta-button,
     .submit-button {
         display: none !important;
     }
-    
+
     .hero {
         min-height: auto;
         padding: 2rem 0;
     }
-    
+
     * {
         box-shadow: none !important;
     }
@@ -1080,7 +1107,7 @@ p {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    
+
     html {
         scroll-behavior: auto;
     }
@@ -1094,11 +1121,223 @@ p {
         --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
     }
-    
+
     .feature-card,
     .objective-card,
     .offering-card,
     .contact-card {
         border: 2px solid var(--dark-gray);
+    }
+}
+
+
+
+/* diwali greeting popup */
+/* Diwali Popup Styles */
+.diwali-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.diwali-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.diwali-popup-content {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    border: 3px solid #fff;
+    animation: diwaliGlow 2s ease-in-out infinite alternate;
+}
+
+.diwali-popup.show .diwali-popup-content {
+    transform: scale(1);
+}
+
+.diwali-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.diwali-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.diwali-company-logo .logo-modal {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.diwali-company-logo .logo-modal img {
+    width: 100%;
+    height: 100%
+}
+
+.diwali-greeting {
+    color: white;
+}
+
+.diwali-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: diwaliFloat 3s ease-in-out infinite;
+}
+
+.diwali-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: diwaliPulse 2s ease-in-out infinite;
+}
+
+.diwali-message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0.95;
+}
+
+.diwali-decorations {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.diwali-light {
+    font-size: 1.5rem;
+    animation: diwaliTwinkle 1.5s ease-in-out infinite;
+}
+
+.diwali-light:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.diwali-light:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* Diwali Animations */
+@keyframes diwaliGlow {
+    0% {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 107, 53, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 107, 53, 0.8), 0 0 40px rgba(255, 215, 0, 0.3);
+    }
+}
+
+@keyframes diwaliFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes diwaliPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes diwaliTwinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
+
+/* Responsive Design for Diwali Popup */
+@media (max-width: 768px) {
+    .diwali-popup-content {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+    }
+
+    .diwali-title {
+        font-size: 2rem;
+    }
+
+    .diwali-message {
+        font-size: 1rem;
+    }
+
+    .diwali-icon {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .diwali-popup-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .diwali-title {
+        font-size: 1.8rem;
+    }
+
+    .diwali-close-btn {
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
     }
 }
