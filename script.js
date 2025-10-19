@@ -614,3 +614,52 @@ window.BhavySoftechWebsite = {
     validateForm,
     createRipple
 };
+
+
+
+// Diwali Popup functionality
+function initializeDiwaliPopup() {
+    const diwaliPopup = document.getElementById('diwali-popup');
+    const closeBtn = document.getElementById('diwali-close-btn');
+    
+    // Show popup on every page refresh/load
+    setTimeout(() => {
+        diwaliPopup.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }, 1000); // Show after 1 second delay
+    
+    // Close popup functionality
+    function closePopup() {
+        diwaliPopup.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scrolling
+        
+        // Remove popup from DOM after animation
+        setTimeout(() => {
+            diwaliPopup.style.display = 'none';
+        }, 300);
+    }
+    
+    // Close button event
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closePopup);
+    }
+    
+    // Close on background click
+    diwaliPopup.addEventListener('click', function(e) {
+        if (e.target === diwaliPopup) {
+            closePopup();
+        }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && diwaliPopup.classList.contains('show')) {
+            closePopup();
+        }
+    });
+}
+
+// Initialize Diwali popup when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeDiwaliPopup();
+});
